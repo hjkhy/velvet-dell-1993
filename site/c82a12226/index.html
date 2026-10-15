@@ -194,6 +194,8 @@ function installDl(){
  },true);
 }
 var cached=null;try{cached=sessionStorage.getItem('__ss_pw')}catch(e){}
-if(cached){attempt(cached,true)}
+var HUB='https://hjkhy.github.io/opal-ember-2810/';
+function bounce(){try{location.replace(HUB)}catch(e){location.href=HUB}}
+if(cached){attempt(cached,true).then(function(ok){if(!ok)bounce()})}else{bounce()}
 })();
 </script></body></html>
